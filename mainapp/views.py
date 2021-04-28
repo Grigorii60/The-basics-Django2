@@ -3,7 +3,16 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    return  render(request, 'mainapp/index.html')
+    contex = {
+        'title': 'geekShop',
+    }
+    return  render(request, 'mainapp/index.html', contex)
 
 def products(request):
-    return  render(request, 'mainapp/products.html')
+    contex = {
+        'title': 'GeekShop-каталог',
+        'product': 'Отличный стул',
+        'discounts': 'горячее предложение',
+        'price': '2585.9',
+    }
+    return  render(request, 'mainapp/products.html', contex)
