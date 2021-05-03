@@ -125,6 +125,12 @@ STATICFILES_DIRS = (
     BASE_DIR / "static",
 )
 
+MIDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(
+    BASE_DIR, "media"
+)
+
+
 #STATICFILES_DIRS = [
 #    BASE_DIR / "static",
 #    'C:/Диск D/Программирование/Основы Django Framework/projects/geekshop-server/geekshop/static/',

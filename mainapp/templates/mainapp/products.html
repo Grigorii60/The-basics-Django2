@@ -20,19 +20,19 @@
 
 		<div class="details">
 			<div class="links clearfix">
-				<ul class="links-menu">
-					<li><a href="#" class="active">все</a></li>
-					<li><a href="#">дом</a></li>
-					<li><a href="#">офис</a></li>
-					<li><a href="#">модерн</a></li>
-					<li><a href="#">классика</a></li>
-				</ul>
+
+					<ul class="links-menu">
+						{% for category in categories %}
+							<li><a href="#" class="active">{{category.name}}</a></li>
+						{% endfor %}
+					</ul>
+
 			</div>
 
 			<div class="details-products">
 				<div class="details-slider">
 					<div class="slider-product">
-						<img src="{% static 'img/slider1.jpg' %}">
+						<img src="/media/{{ product.image }}">
 					</div>
 					<div class="slider-control">
 						<div class="block">
@@ -54,21 +54,22 @@
 				</div>
 
 				<div class="description">
-					<h3 class="big-bold">{{ product }}</h3>
-					<h3 class="red">{{ discounts }}</h3>
-					<p class="price">{{ price }}<span> руб</span></p>
-					<a href="#" class="red-button">
-						заказать <i class="fa fa-chevron-right" aria-hidden="true"></i>
-					</a>
-					<div class="description-text">
-						<p>Расположитесь комфортно.</p>
-						<p>Отличное качество материалов
-						позволит вам это.</p>
-						<p>Различные цвета</p>
-						<p>высочайший уровень
-						эргономики и прочность.</p>
-					</div>
+					{% for product in products %}
+						<h3 class="big-bold">{{ product.name }}</h3>
+						<h3 class="red">{{ product.description }}</h3>
+						<p class="price">{{ product.price }}<span> руб</span></p>
+						<a href="#" class="red-button">
+							заказать <i class="fa fa-chevron-right" aria-hidden="true"></i>
+						</a>
+						<div class="description-text">
+							<p>Расположитесь комфортно.</p>
+							<p>Отличное качество материалов позволит вам это.</p>
+							<p>Различные цвета</p>
+							<p>высочайший уровень эргономики и прочность.</p>
+						</div>
+					{% endfor %}
 				</div>
+
 			</div>
 
 			<div class="related">
