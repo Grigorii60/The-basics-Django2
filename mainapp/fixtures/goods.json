@@ -1,0 +1,1 @@
+[{"model": "mainapp.product", "pk": 1, "fields": {"name": "Отличный стул", "image": "products_images/slider1_0SF8fkn.jpg", "description": "ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ", "price": "2585.90", "quantity": 5, "category": 1}}]
