@@ -10,7 +10,7 @@
 				<a href="{% url 'index' %}" class="logo"></a>
 				<ul class="menu">
 					<li><a href="{% url 'index' %}">домой</a></li>
-					<li><a href="{% url 'products' %}" class="active">продукты</a></li>
+					<li><a href="{% url 'products:index' %}" class="active">продукты</a></li>
 					<li><a href="contact.html">контакты</a></li>
 				</ul>
 				<a href="#" class="search"></a>
@@ -32,7 +32,7 @@
 			<div class="details-products">
 				<div class="details-slider">
 					<div class="slider-product">
-						<img src="/media/{{ product.image }}">
+						<img src="/media/products_images/slider1_0SF8fkn.jpg">
 					</div>
 					<div class="slider-control">
 						<div class="block">

@@ -10,8 +10,14 @@
 				<a href="{% url 'index' %}" class="logo"></a>
 				<ul class="menu">
 					<li><a href="{% url 'index' %}" class="active">домой</a></li>
-					<li><a href="{% url 'products' %}">продукты</a></li>
-					<li><a href="contact.html">контакты</a></li>
+					<li><a href="{% url 'products:index' %}">продукты</a></li>
+					<li><a href="contact.html">Контакты</a></li>
+					{% if user.is_authenticated %}
+					<li><a href="{% url 'users:logout' %}">Выйти</a></li>
+					<li><a href="#">Личный кабинет</a></li>
+					{% else %}
+					<li><a href="{% url 'users:login' %}">Войти</a></li>
+					{% endif %}
 				</ul>
 				<a href="#" class="search"></a>
 			</div>
