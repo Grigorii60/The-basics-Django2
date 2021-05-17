@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'mainapp',
     'authapp',
+    'basketapp',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru' #'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -132,6 +133,8 @@ MEDIA_ROOT = os.path.join(
 )
 
 AUTH_USER_MODEL = 'authapp.User'
+
+LOGIN_URL = '/users/login/'
 
 #STATICFILES_DIRS = [
 #    BASE_DIR / "static",

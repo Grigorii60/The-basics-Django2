@@ -3,6 +3,10 @@
 {% block title %}
 	<title>{{ title|title }} {% now "Y" %}</title>
 {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
+{% endblock %}
 {% block content %}
 	<div class="container">
 		<div class="slider">
@@ -14,7 +18,7 @@
 					<li><a href="contact.html">Контакты</a></li>
 					{% if user.is_authenticated %}
 					<li><a href="{% url 'users:logout' %}">Выйти</a></li>
-					<li><a href="#">Личный кабинет</a></li>
+					<li><a href="{% url 'users:profile' %}">Личный кабинет</a></li>
 					{% else %}
 					<li><a href="{% url 'users:login' %}">Войти</a></li>
 					{% endif %}
@@ -64,4 +68,32 @@
 		<div class="clr"></div>
 
 	</div>
+{% endblock %}
+{% block footer %}
+	<div class="footer">
+        <div class="clearfix">
+            <div class="text-footer">
+                <h3>контакты</h3>
+            </div>
+            <div class="text-footer">
+                <h3>полезная информация</h3>
+            </div>
+            <div class="text-footer clearfix">
+                <h3>Оставайтесь на связи</h3>
+                <p>Подписаться на новости и рассылки</p>
+                <form>
+                    <input type="email" name="email" placeholder="ваш email">
+                    <a href="#"><i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i></a>
+                </form>
+            </div>
+        </div>
+        <p class="small">&copy; GB 2017</p>
+        <div class="social">
+            <a href="#" class="social1"></a>
+            <a href="#" class="social2"></a>
+            <a href="#" class="social3"></a>
+            <a href="#" class="social4"></a>
+        </div>
+        <p class="small">Положения &amp; Условия  /  Конфиденциальность &amp; Cookies</p>
+    </div>
 {% endblock %}
