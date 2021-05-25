@@ -16,6 +16,13 @@
 					<li><a href="{% url 'index' %}" class="active">домой</a></li>
 					<li><a href="{% url 'products:index' %}">продукты</a></li>
 					<li><a href="contact.html">Контакты</a></li>
+					{% if user.is_staff or user.is_superuser %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin_staff:index' %}">
+                                <i class="fas fa-users-cog"></i>
+                            </a>
+                        </li>
+                    {% endif %}
 					{% if user.is_authenticated %}
 					<li><a href="{% url 'users:logout' %}">Выйти</a></li>
 					<li><a href="{% url 'users:profile' %}">Личный кабинет</a></li>
